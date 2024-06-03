@@ -1,0 +1,156 @@
+.header
+    position: fixed
+    z-index: 10
+    width: 75%
+    left: 50%
+    transform: translateX(-50%)
+    mix-blend-mode: difference
+    &__btn
+        position: relative
+        z-index: 10
+        width: 3rem
+        height: 1.6rem
+        border: none
+        outline: none
+        background: none
+        display: none
+        @include respond(phone)
+            display: block
+            margin: 2.5rem 2rem 0 0 
+    &__btn span
+        display: block
+        position: absolute
+        width: 3rem
+        height: .1rem
+        background: white
+        transition: all .3s
+        &:nth-child(1)
+            transform: translateY(-.8rem)
+        &:nth-child(3)
+            transform: translateY(.8rem)
+    @include respond(phone)
+        display: flex
+        justify-content: flex-end
+        width: 100%
+        left: auto
+        transform: translateX(0)
+        // height: 100vh
+        mix-blend-mode: normal
+        z-index: 8
+        // opacity: 0
+
+.header.open .header__btn span
+    display: block
+    position: absolute
+    width: 3rem
+    height: .1rem
+    background: white
+    &:nth-child(1)
+        transform: translateY(0) rotate(29deg)
+        background: $color-orange
+    &:nth-child(2)
+        opacity: 0
+    &:nth-child(3)
+        transform: translateY(0) rotate(-29deg)
+        background: $color-orange
+
+.header.open .navigation
+    @include respond(phone)
+        transform: translateX(-100%)
+        visibility: visible
+        z-index: 7
+
+
+.navigation
+    width: 100%
+    @include respond(phone)
+        position: absolute
+        width: 70%
+        height: 100vh
+        right: -70%
+        padding: 9rem 5% 0 0 
+        -webkit-backdrop-filter: blur(1.5rem)
+        backdrop-filter: blur(1.5rem)
+        background: rgba(0, 0, 0, 0.2)
+        visibility: hidden
+        transition: all .3s
+        z-index: 4
+        will-change: transition
+    &__list
+        display: flex
+        justify-content: space-between
+        list-style-type: none
+        z-index: 10
+        @include respond(phone)
+            flex-direction: column
+    &__item
+        margin-top: 1.5rem
+        // z-index: 10
+        @include respond(phone)
+            margin: 0
+            &:not(:last-child)
+                margin-bottom: 5rem
+    &__link
+        position: relative
+        display: inline-block
+        text-decoration: none
+        color: white
+        font-family: "Inter-light"
+        font-size: 2rem
+        @include respond(phone)
+            float: right
+            text-transform: uppercase
+            font-size: 3rem
+        &:hover
+            font-family: "Inter-regular"
+            color: $color-orange
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: .1rem
+            background: white
+            border-radius: 4rem
+            transform: scaleX(0)
+            transform-origin: right
+            transition: transform .3s
+        &:hover::after
+            background: $color-orange
+            transform-origin: left
+            transform: scaleX(1)
+
+.navigation-bottom
+    display: none
+    @include respond(phone)
+        bottom: 6.5rem
+        right: 7%
+        position: absolute
+        display: flex
+        flex-direction: column
+        text-align: right
+        list-style-type: none
+    &__item
+        @include respond(phone)
+            font-size: 2rem
+            &:not(:last-child)
+                margin-bottom: 1.5rem
+        &-1
+            @include respond(phone)
+                margin-bottom: 4rem
+    &__link
+        @include respond(phone)
+            text-decoration: none
+            font-size: 2rem
+            color: white
+    &__text
+        @include respond(phone)
+            width: 19rem
+            text-decoration: none
+            font-size: 2rem
+            font-family: "Inter-lightItalic"
+            margin-bottom: 2rem
+        &__span
+            @include respond(phone)
+                font-family: "Inter-medium"

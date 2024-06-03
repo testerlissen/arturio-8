@@ -1,0 +1,170 @@
+.artists
+    position: relative
+    z-index: 6
+    margin-bottom: 38rem
+    @include respond(medium-screen)
+        margin-bottom: 28rem
+    @include respond(tab-land)
+        margin-bottom: 20rem
+    @include respond(phone)
+        margin-bottom: 15rem
+
+    &-title
+        &-wrapper
+            width: 103rem
+            margin: 0 auto
+            margin-bottom: 6rem
+            @include respond(tab-land)
+                width: 54.5rem
+                margin-bottom: 4rem
+            @include respond(phone)
+                width: 90%
+                margin-bottom: 2rem
+        &-2
+            display: flex
+            justify-content: center
+            margin-top: -2.5rem
+            @include respond(tab-land)
+                margin-top: -1.5rem
+            @include respond(phone)
+                display: block
+                margin-top: -1rem
+                margin-left: 18.5%
+
+    &-text
+        margin: 0 auto
+        width: 17.8%
+        margin-bottom: 15rem
+        @include respond(medium-screen)
+            margin-bottom: 10rem
+        @include respond(tab-land)
+            width: 26.5%
+            margin-bottom: 10rem
+        @include respond(phone)
+            transform: translateX(10%)
+            width: 70%
+            margin-bottom: 5rem
+
+    &-wrapper
+        width: 89.5%
+        display: grid
+        grid-template-columns: 20% 20% 20% 20% 20%
+        grid-template-rows: 1fr 4.3rem
+        grid-gap: .1rem
+        margin: 0 auto
+        @include respond(tab-land)
+            width: 90%
+            grid-template-columns: 33.3% 33.3% 33.3%
+            grid-template-rows: 1fr 3.8rem 10rem 1fr 3.8rem
+        @include respond(phone)
+            grid-template-columns: 50% 50%
+            grid-template-rows: 1fr 3.8rem 5rem 1fr 3.8rem 5rem 1fr 3.8rem
+    &-card
+        width: 100%
+        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%)
+        position: relative
+        transition: all .5s
+        &-1
+            grid-column: 1 / 2
+            grid-row: 1 / 2
+        &-2
+            grid-column: 2 / 3
+            grid-row: 1 / 2
+        &-3
+            grid-column: 3 / 4
+            grid-row: 1 / 2
+            @include respond(phone)
+                grid-column: 1 / 2
+                grid-row: 4 / 5
+        &-4
+            grid-column: 4 / 5
+            grid-row: 1 / 2
+            @include respond(tab-land)
+                grid-column: 1 / 2
+                grid-row: 4 / 5
+            @include respond(phone)
+                grid-column: 2 / 3
+                grid-row: 4 / 5
+        &-5
+            grid-column: 5 / 6
+            grid-row: 1 / 2
+            @include respond(tab-land)
+                grid-column: 3 / 4
+                grid-row: 4 / 5
+            @include respond(phone)
+                grid-column: 1 / 2
+                grid-row: 7 / 8
+        img
+            height: 100%
+            width: 100%
+            transform: scale(1)
+            transition: all .5s
+            object-fit: cover
+        &:hover img
+            transform: scale(1.2)
+            filter: blur(.1rem) brightness(65%)
+        &:hover
+            clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%)
+        &:hover .artists-caption
+            opacity: 1
+            transform: translateY(-4.5rem)
+        &:hover .artist-name-arrow
+            // transform: rotate(-90deg)
+            transform: translateY(-4.5rem)
+
+    &-caption
+        opacity: 0
+        position: absolute
+        top: 98%
+        left: 10%
+        font-family: "Inter-light"
+        font-size: 2rem
+        transition: all .3s
+        @include respond(tab-land)
+            font-size: 1.8rem
+        @include respond(tab-port)
+            font-size: 1.6rem
+            top: 103%
+
+.name-wrapper
+    display: flex
+    &-1
+        grid-column: 1 / 2
+        grid-row: 2 / 3
+    &-2
+        grid-column: 2 / 3
+        grid-row: 2 / 3
+    &-3
+        grid-column: 3 / 4
+        grid-row: 2 / 3
+        @include respond(phone)
+            grid-column: 1 / 2
+            grid-row: 5 / 6
+    &-4
+        grid-column: 4 / 5
+        grid-row: 2 / 3
+        @include respond(tab-land)
+            grid-column: 1 / 2
+            grid-row: 5 / 6
+        @include respond(phone)
+            grid-column: 2 / 3
+            grid-row: 5 / 6
+    &-5
+        grid-column: 5 / 6
+        grid-row: 2 / 3
+        @include respond(tab-land)
+            grid-column: 3 / 4
+            grid-row: 5 / 6
+        @include respond(phone)
+            grid-column: 1 / 2
+            grid-row: 8 / 9
+
+.artist-name
+    font-family: "Inter-light"
+    font-weight: 300
+    font-size: 2rem
+    align-self: end
+    @include respond(tab-land)
+        font-size: 1.8rem
+    @include respond(phone)
+        font-size: 1.7rem

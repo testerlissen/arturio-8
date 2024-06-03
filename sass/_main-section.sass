@@ -1,0 +1,144 @@
+.main-section
+    position: relative
+    height: 100rem
+    width: 100%
+    @include respond(tab-land)
+        height: 84rem
+    @include respond(phone)
+        height: 100vh
+
+.main-wrapper
+    position: absolute
+    width: 116rem
+    // height: 100%
+    left: 50%
+    transform: translateX(-47%)
+    margin-top: 32rem
+    @include respond(medium-screen)
+        width: 95rem
+    @include respond(tab-land)
+        width: 76rem
+        margin-top: 28rem
+    @include respond(tab-port)
+        width: 46rem
+        margin-top: 30rem
+    @include respond(phone)
+        // position: relative
+        // margin-top: 29rem
+        margin: auto
+        top: 30%
+        width: 90%
+        transform: translateX(-50%)
+    
+.title-wrapper
+    position: absolute
+    width: 85rem
+    // margin: 0 auto
+    left: 50%
+    transform: translateX(-54%)
+    @include respond(medium-screen)
+        width: 66rem
+        height: 14rem
+    @include respond(tab-land)
+        width: 52.5rem
+        height: 11rem
+    @include respond(tab-port)
+        display: flex
+        width: 34rem
+        height: 20.6rem
+    @include respond(phone)
+        // display: flex
+        // justify-content: end
+        // align-items: end
+        // position: relative
+        width: 80%
+        transform: translateX(-50%)
+
+.main-title
+    position: absolute
+    font-family: "Arial-black"
+    font-size: 13rem
+    @include respond(medium-screen)
+        font-size: 10rem
+    @include respond(tab-land)
+        font-size: 8rem
+    @include respond(tab-port)
+        font-size: 7rem
+    @include respond(phone)
+        // position: relative
+        font-size: 6.5rem
+    &-1
+        @include respond(phone)
+
+    &-2
+        left: 48.4rem
+        @include respond(medium-screen)
+            left: 38rem
+        @include respond(tab-land)
+            left: 30rem
+        @include respond(tab-port)
+            left: 14.5rem
+            top: 12.5rem
+        @include respond(phone)
+            // display: flex
+            // justify-content: end
+            left: auto
+            right: 0
+            top: 13.3rem
+.main-img
+    position: absolute
+    left: 31rem
+    top: 5rem
+    @include respond(medium-screen)
+        width: 13rem
+        height: 7.5rem
+        top: 3.7rem
+        left: 24rem
+    @include respond(tab-land)
+        width: 10rem
+        height: 6rem
+        top: 3.2rem
+        left: 19.25rem
+    @include respond(tab-port)
+        width: 8.5rem
+        height: 5.5rem
+        top: 8.5rem
+        left: 11.5rem
+    @include respond(phone)
+        left: 50%
+        transform: translateX(-50%)
+        
+
+.caption
+    position: absolute
+    font-family: "Arial-italic"
+    font-size: 2rem
+    @include respond(medium-screen)
+        font-size: 1.8rem
+    @include respond(tab-land)
+        font-size: 1.5rem
+    &-1
+        top: 12.4rem
+        @include respond(medium-screen)
+            top: 9.3rem
+        @include respond(tab-land)
+            top: 7.5rem
+        @include respond(tab-port)
+            top: .5rem
+    &-2
+        top: 4.5rem
+        left: 97.7rem
+        @include respond(medium-screen)
+            white-space: nowrap
+            top: 3.4rem
+            left: 79rem
+        @include respond(tab-land)
+            left: 63rem
+            top: 2.9rem
+        @include respond(tab-port)
+            left: 30rem
+            top: 21rem
+        @include respond(phone)
+            left: auto
+            right: 0
+            top: 21rem

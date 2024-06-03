@@ -1,0 +1,267 @@
+.modal
+    position: fixed
+    left: 0
+    top: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100vh
+    z-index: 100
+    -webkit-backdrop-filter: blur(.6rem)
+    backdrop-filter: blur(.6rem)
+    background: rgba(0, 0, 0, 0.2)
+    overflow-y: auto
+    visibility: hidden
+    opacity: 0
+    transition: opacity .4s, visibility .4s
+    &-btn
+        width: 48rem
+        margin-left: 6.5rem
+        font-size: 1.8rem
+        @include respond(tab-land)
+            width: 41rem
+            margin-left: 5rem
+        @include respond(tab-port)
+            width: 90%
+            margin-left: 5%
+            font-size: 1.6rem
+        &:active
+            transform: translateY(.1rem)
+
+.modal.open
+    visibility: visible
+    opacity: 1
+
+.modal__box
+    width: 103rem
+    height: 40rem
+    z-index: 20
+    display: flex
+    @include respond(tab-land)
+        width: 89.5rem
+        height: 38rem
+    @include respond(tab-port)
+        position: relative
+        width: 90%
+        height: 54rem
+        flex-direction: column
+    &-1
+        width: 86.5rem
+        height: 100%
+        background: black
+        border: .1rem solid white
+        border-radius: .5rem 4rem 4rem .5rem
+        padding: 3rem 0
+        position: relative
+        @include respond(tab-land)
+            width: 72.9rem
+        @include respond(tab-port)
+            width: 100%
+            height: 41.3rem
+            border-radius: .5rem .5rem 4rem 4rem
+        &__title
+            font-family: "Inter-regular"
+            font-weight: 400
+            font-size: 2.2rem
+            margin-left: 5.5rem
+            margin-bottom: 1rem
+            @include respond(tab-land)
+                font-size: 2rem
+                margin-left: 4rem
+            @include respond(tab-port)
+                margin-left: 1.5rem
+                margin-bottom: 1rem
+        &__close-btn
+            display: none
+            @include respond(tab-port)
+                display: block
+                position: absolute
+                border: none
+                background-color: transparent
+                right: 2rem
+                top: 2rem
+    &-2
+        width: 16.6rem
+        height: 100%
+        background: black
+        border: .1rem dashed white
+        border-radius: 4rem .5rem .5rem 4rem
+        transform: translateX(-.1rem)
+        @include respond(tab-port)
+            width: 100%
+            height: 12.6rem
+            transform: translateY(-.1rem)
+            border-radius: 4rem 4rem .5rem .5rem
+        &__wrapper
+            position: relative
+            width: 100%
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+
+        &__title
+            position: absolute
+            font-family: "Inter-medium"
+            font-weight: 500
+            font-size: 3.6rem
+            transform: rotate(-90deg)
+            white-space: nowrap
+            @include respond(tab-land)
+                font-size: 3.4rem
+            @include respond(tab-port)
+                transform: rotate(0deg)
+
+        &__number
+            margin-left: -1rem
+
+    &__email
+        width: 48rem
+        height: 3.8rem
+        background: black
+        border: .1rem solid white
+        padding-left: 1.5rem
+        margin-left: 6.5rem
+        font-family: "Inter-light"
+        font-size: 1.6rem
+        color: white
+        margin-bottom: 2rem
+        @include respond(tab-land)
+            width: 41rem
+            height: 3.4rem
+            font-size: 1.4rem
+            margin-left: 5rem
+        @include respond(tab-port)
+            width: 90%
+            margin-left: 5%
+        &:focus
+            outline: none
+            border-bottom: .2rem solid #5CDB95
+        &:focus:invalid
+            border-bottom: .2rem solid $color-orange
+
+    &__bank-card-number
+        width: 48rem
+        height: 3.8rem
+        background: black
+        border: .1rem solid white
+        padding-left: 1.5rem
+        font-family: "Inter-light"
+        font-size: 1.6rem
+        color: white
+        margin-bottom: 1rem
+        margin-left: 6.5rem
+        @include respond(tab-land)
+            width: 41rem
+            height: 3.4rem
+            font-size: 1.4rem
+            margin-left: 5rem
+        @include respond(tab-port)
+            width: 90%
+            margin-left: 5%
+
+    &__bank-card-year
+        width: 23.5rem
+        height: 3.8rem
+        background: black
+        border: .1rem solid white
+        padding-left: 1.5rem
+        font-family: "Inter-light"
+        font-size: 1.6rem
+        color: white
+        @include respond(tab-land)
+            width: 20rem
+            height: 3.4rem
+            font-size: 1.4rem
+        @include respond(tab-port)
+            width: 49%
+
+    &__bank-card-cvv
+        width: 23.5rem
+        height: 3.8rem
+        background: black
+        border: .1rem solid white
+        padding-left: 1.5rem
+        font-family: "Inter-light"
+        font-size: 1.6rem
+        color: white
+        margin-left: 1rem
+        margin-bottom: .2rem
+        @include respond(tab-land)
+            width: 20rem
+            height: 3.4rem
+            font-size: 1.4rem
+            margin-left: 1rem
+        @include respond(tab-port)
+            width: 49%
+
+    &__bank-card-name
+        width: 48rem
+        height: 3.8rem
+        background: black
+        border: .1rem solid white
+        padding-left: 1.5rem
+        font-family: "Inter-light"
+        font-size: 1.6rem
+        color: white
+        margin-bottom: 1.5rem
+        margin-left: 6.5rem
+        text-transform: capitalize
+        @include respond(tab-land)
+            width: 41rem
+            height: 3.4rem
+            font-size: 1.4rem
+            margin-left: 5rem
+        @include respond(tab-port)
+            width: 90%
+            margin-left: 5%
+
+.card-wrapper
+    display: flex
+    margin-left: 6.5rem
+    width: 48rem
+    @include respond(tab-land)
+        margin-left: 5rem
+    @include respond(tab-port)
+        width: 90%
+        margin-left: 5%
+
+.text-under-cvv
+    font-family: "Inter-light"
+    font-size: 1.1rem
+    margin-left: 31.5rem
+    margin-bottom: 1rem
+    @include respond(tab-land)
+        font-size: .9rem
+        margin-left: 26.5rem
+    @include respond(tab-port)
+        width: 40%
+        margin-left: 52.5%
+
+.qr-wrapper
+    position: absolute
+    top: 10rem
+    right: 7.8rem
+    @include respond(tab-land)
+        right: 7rem
+    @include respond(tab-port)
+        display: none
+
+.qr-github
+    margin-bottom: 1rem
+    @include respond(tab-land)
+        width: 14rem
+        height: 14rem
+        margin-bottom: .5rem
+    &__text
+        font-family: "Inter-regular"
+        font-weight: 400
+        font-size: 2rem
+        text-align: center
+        @include respond(tab-land)
+            font-size: 1.8rem
+
+input:required:invalid ~ button.modal-btn 
+    opacity: .9
+    pointer-events: none

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/fav-icon__ARTURIO/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/fav-icon__ARTURIO/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/fav-icon__ARTURIO/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/fav-icon__ARTURIO/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/fav-icon__ARTURIO/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/fav-icon__ARTURIO/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/fav-icon__ARTURIO/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/fav-icon__ARTURIO/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/fav-icon__ARTURIO/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icons/fav-icon__ARTURIO/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/fav-icon__ARTURIO/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/fav-icon__ARTURIO/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/fav-icon__ARTURIO/favicon-16x16.png">
+    <link rel="manifest" href="icons/fav-icon__ARTURIO/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icons/fav-icon__ARTURIO/ms-icon-144x144.png">
+    <meta name="theme-color" content="#00000">
+    <meta property="og:title" content="ARTURIO">
+    <meta property="og:site_name" content="ARTURIO">
+    <meta property="og:description" content="This is a unique place where art comes to life and takes on a new dimension.">
+    <meta property="og:image" content="icon/ms-icon-150x150.png">
+    <meta property="og:image:width" content="150">
+    <meta property="og:image:height" content="150">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ARTURIO</title>
+</head>
+<body>
+    <div class="circle"></div>
+
+    <div class="modal" id="my-modal">
+        <div class="modal__box clicker">
+            <div class="modal__box-1">
+                <button class="modal__box-1__close-btn" id="close-my-modal-btn">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.353553" y1="0.646447" x2="25.3536" y2="25.6464" stroke="white"/>
+                        <line x1="25.3536" y1="0.353553" x2="0.353554" y2="25.3536" stroke="white"/>
+                    </svg>
+                </button>
+                <h2 class="modal__box-1__title">
+                    Contact
+                </h2>
+                <form action="#">
+                    <input class="modal__box__email" type="email" placeholder="E-mail" required>
+                    <h2 class="modal__box-1__title">
+                        Payment
+                    </h2>
+                    <input class="modal__box__bank-card-number" type="text" id="bank-card-number" placeholder="Card number" minlength="19" required>
+                    <div class="card-wrapper">
+                        <input class="modal__box__bank-card-year" type="text" id="date" placeholder="Expiration date (MM / YY)" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                        <input class="modal__box__bank-card-cvv" type="text" id="cvv" placeholder="Security code" oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="3" required>
+                    </div>
+                    <p class="text-under-cvv">Enter the CVV or security code on your card</p>
+                    <input class="modal__box__bank-card-name" type="text" id="bank-card-name" placeholder="Name on card" required>
+                    <button class="modal-btn btn next" id="modal-btn" onclick="alert('Your ticket has been sent by email.')">
+                        PAY NOW
+                    </button>
+                </form>
+                <div class="qr-wrapper">
+                    <img class="qr-github" src="img/qr-github.png" alt="qr-github">
+                    <p class="qr-github__text">
+                        Pay using SBP
+                    </p>
+                </div>
+            </div>
+            <div class="modal__box-2">
+                <div class="modal__box-2__wrapper">
+                    <h2 class="modal__box-2__title" id="modal-title">
+                        TICKET №
+                        <span class="modal__box-2__number counter">
+                            0
+                        </span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-wripper">
+        <div class="background-line background-line-1"></div>
+        <div class="background-line background-line-2"></div>
+        <div class="background-line background-line-3"></div>
+        <div class="background-line background-line-4"></div>
+        <div class="background-line background-line-5"></div>
+        <div class="background-line background-line-6"></div>
+    </div>
+
+    <header class="header">
+        <button class="header__btn" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="navigation" id="menu">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#about" class="navigation__link">about</a></li>
+                <li class="navigation__item"><a href="#project" class="navigation__link">project</a></li>
+                <li class="navigation__item"><a href="#artist" class="navigation__link">artist</a></li>
+            </ul>
+            <ul class="navigation-bottom">
+                <li class="navigation-bottom__item navigation-bottom__item-1">
+                    <p class="navigation-bottom__text"><span class="navigation-bottom__text__span">Place:</span><br>Moscow. St. Balkanskaya 94</p>
+                </li>
+                <li class="navigation-bottom__item navigation-bottom__item-2">
+                    <a class="navigation-bottom__link" href="tel:9 999 999 99 99">+9 999 999 99 99</a>
+                </li>
+                <li class="navigation-bottom__item navigation-bottom__item-3">
+                    <a class="navigation-bottom__link" href="mailto:artur##@mail.com">artur##@mail.com</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-section">
+        <div class="main-wrapper">
+            <p class="caption caption-1">
+                ART SPACE
+            </p>
+            <div class="title-wrapper">
+                <h1 class="main-title main-title-1">
+                    ART
+                </h1>
+                <img src="img/main-img.png" alt="main-img" class="main-img">
+                <h1 class="main-title main-title-2">
+                    URIO
+                </h1>
+            </div>
+            <p class="caption caption-2">
+                WAITING FOR YOU
+            </p>
+        </div>
+
+        <button class="main-btn" id="open-modal-btn">
+            Buy ticket
+        </button>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-background"></div>
+        <h2 class="about-title">
+            ARTURIO —
+        </h2>
+        <p class="about-text text">
+            This is a unique place where art comes to life and takes on a new dimension. Here, every corner is filled with creativity and inspiration, creating an atmosphere in which modern and classic man-made trends merge. Arturio not only offers an extensive collection of works of art, but also the opportunity to plunge into the world of creativity through workshops, exhibitions and meetings with talented artists.
+        </p>
+    </section>
+
+    <section class="project" id="project">
+        <h2 class="project-title title">
+            ARTIST PROJECT
+        </h2>
+        <div class="project-wrapper">
+            <div class="project-card project-card-1">
+                <img src="img/project-1.png" alt="project-1" class="project-card__img">
+                <p class="project-caption">
+                    3D
+                </p>
+            </div>
+            <div class="project-card project-card-2">
+                <img src="img/project-2.png" alt="project-2" class="project-card__img">
+                <p class="project-caption">
+                    PHOTO
+                </p>
+            </div>
+            <div class="project-card project-card-3">
+                <img src="img/project-3.png" alt="project-3" class="project-card__img">
+                <p class="project-caption">
+                    ENVIRONMENT
+                </p>
+            </div>
+            <div class="project-card project-card-4">
+                <img src="img/project-4.png" alt="project-4" class="project-card__img">
+                <p class="project-caption">
+                    CLASSIC
+                </p>
+            </div>
+            <div class="project-card project-card-5">
+                <img src="img/project-5.png" alt="project-5" class="project-card__img">
+                <p class="project-caption">
+                    EXPEREMENTAL
+                </p>
+            </div>
+            <div class="project-card project-card-6">
+                <img src="img/project-6.png" alt="project-6" class="project-card__img">
+                <p class="project-caption">
+                    NATURE
+                </p>
+            </div>
+            <p class="project-text text">
+                You will be able to see more projects by visiting our exhibition, where you will have the opportunity to appreciate the skill and creative vision of each artist, as well as interact with them and learn about their inspiration and work process.
+            </p>
+        </div>
+    </section>
+
+    <section class="artists" id="artist">
+        <div class="artists-title-wrapper">
+            <h2 class="artists-title artists-title-1 title">
+                PROJECT
+            </h2>
+            <h2 class="artists-title artists-title-2 title">
+                PARTICIPANTS
+            </h2>
+        </div>
+        <p class="artists-text text">
+            Our art space brings together some of the most talented and innovative artists from around the world. Each brings a unique perspective and approach to art, creating captivating works that inspire, provoke and delight our visitors.
+        </p>
+        <div class="artists-wrapper">
+            <div class="artists-card artists-card-1">
+                <img src="img/artist-1.png" alt="artist-1" class="artists-card-img">
+                <p class="artists-caption">
+                    PHOTOGRAPHER
+                </p>
+            </div>
+            <div class="name-wrapper name-wrapper-1">
+                <p class="artist-name artist-name-1">
+                    Lewis Maxwell
+                </p>
+            </div>
+            <div class="artists-card artists-card-2">
+                <img src="img/artist-2.png" alt="artist-2" class="artists-card-img">
+                <p class="artists-caption">
+                    PHOTOGRAPHER
+                </p>
+            </div>
+            <div class="name-wrapper name-wrapper-2">
+                <p class="artist-name artist-name-2">
+                    Jennifer Gordon
+                </p>
+            </div>
+            <div class="artists-card artists-card-3">
+                <img src="img/artist-3.png" alt="artist-3" class="artists-card-img">
+                <p class="artists-caption">
+                    ARTIST
+                </p>
+            </div>
+            <div class="name-wrapper name-wrapper-3">
+                <p class="artist-name artist-name-3">
+                    Vanessa Greer
+                </p>
+            </div>
+            <div class="artists-card artists-card-4">
+                <img src="img/artist-4.png" alt="artist-4" class="artists-card-img">
+                <p class="artists-caption">
+                    3D DESIGNER
+                </p>
+            </div>
+            <div class="name-wrapper name-wrapper-4">
+                <p class="artist-name artist-name-4">
+                    Ryan Mitchell
+                </p>
+            </div>
+            <div class="artists-card artists-card-5">
+                <img src="img/artist-5.png" alt="artist-5" class="artists-card-img">
+                <p class="artists-caption">
+                    ARTIST
+                </p>
+            </div>
+            <div class="name-wrapper name-wrapper-5">
+                <p class="artist-name artist-name-5">
+                    Sharon Williams
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="message">
+                <h3 class="message-title title-footer">
+                    CONNECT
+                    <span class="message-title__span">
+                        WITH US
+                    </span>
+                </h3>
+                <form action="#">
+                    <input class="message__email" type="email" placeholder="E-mail" required>
+                    <textarea class="message__textarea" placeholder="Your message" required></textarea>
+                    <button class="btn" id="footer-btn" type="button">
+                        SEND
+                    </button>
+                </form>
+            </div>
+
+            <div class="social-network">
+                <ul class="social-network-ul">
+                    <li class="social-network-li">
+                        <a class="social-network-link" href="https://www.instagram.com/" target="_blank">Instagram</a>
+                    </li>
+                    <li class="social-network-li">
+                        <a class="social-network-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
+                    </li>
+                    <li class="social-network-li">
+                        <a class="social-network-link" href="https://web.telegram.org/" target="_blank">Telegram</a>
+                    </li>
+                    <li class="social-network-li">
+                        <a class="social-network-link" href="https://ru.pinterest.com/" target="_blank">Pinterest</a>
+                    </li>
+                    <li class="social-network-li">
+                        <a class="social-network-link" href="https://www.tiktok.com/" target="_blank">Tik Tok</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="connection">
+                <ul class="connection-ul">
+                    <li class="connection-li-1">
+                        <a class="connection-link connection-link-1" href="tel:9 999 999 99 99">+9 999 999 99 99</a>
+                    </li>
+                    <li class="connection-li-2">
+                        <a class="connection-link connection-link-2" href="mailto:artur##@mail.com">artur##@mail.com</a>
+                    </li>
+                    <li class="connection-li-3">
+                        <p class="connection-link connection-link-3"><span class="connection-link-3__span">Place:</span><br>Moscow. St. Balkanskaya 94</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-line"></div>
+    <div class="footer-unline">
+        <a class="footer-text footer-text-1" href="##">Privacy Policy</a>
+        <a class="footer-text footer-text-2" href="##">Cookie Policy</a>
+        <a class="footer-text footer-text-3" href="##">© 2024 ARTURIO</a>
+    </div>
+
+    <script src="scripts/jquery-3.7.1.js"></script>
+    <script src="scripts/cursor.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/bm.js"></script>
+</body>
+</html>

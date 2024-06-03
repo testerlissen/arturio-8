@@ -1,0 +1,57 @@
+.about
+    position: relative
+    width: 100%
+    height: 30rem
+    background: url("../gif/background-gif.gif") center / cover no-repeat
+    margin-bottom: 38rem
+    background-attachment: fixed
+    z-index: 1
+    display: flex
+    align-items: center
+    @include respond(medium-screen)
+        margin-bottom: 28rem
+    @include respond(tab-land)
+        height: 23rem
+        margin-bottom: 20rem
+    @include respond(tab-port)
+        height: 100%
+        flex-direction: column
+    @include respond(phone)
+        margin-bottom: 15rem
+    &-background
+        position: absolute
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.7)
+    &-title
+        white-space: nowrap
+        z-index: 2
+        font-family: "Inter-regular"
+        font-size: 12.8rem
+        margin-left: 5%
+        width: 73rem
+        @include respond(medium-screen)
+            font-size: 9rem
+        @include respond(tab-land)
+            font-size: 8rem
+        @include respond(tab-port)
+            margin: 7rem 0 1.5rem 0
+            display: flex
+            justify-content: center
+            width: 100%
+        @include respond(tab-port)
+            font-size: 12.5vw
+    &-text
+        z-index: 2
+        min-width: 20%
+        max-width: 60%
+        margin-left: 4rem
+        margin-right: 5%
+        @include respond(tab-port)
+            text-align: justify
+            margin: 0 0 7rem 0
+            display: flex
+            justify-content: center
+            max-width: 80%
+        @include respond(phone)
+            max-width: 90%

@@ -1,0 +1,77 @@
+@font-face 
+  font-family: "Arial-black"
+  src: url("../fonts/arial_black.ttf")
+  font-weight: 900
+  text-transform: uppercase
+  font-display: swap
+  font-style: normal
+  font-size: 2.4rem
+  line-height: normal
+
+@font-face 
+  font-family: "Arial-italic"
+  src: url("../fonts/arial_italic.ttf")
+  font-weight: 400
+  font-display: swap
+  font-style: normal
+  font-size: 2.4rem
+  line-height: normal
+
+@font-face 
+  font-family: "Inter-light"
+  src: url("../fonts/Inter-Light.ttf")
+  font-weight: 300
+  font-display: swap
+  font-style: normal
+  font-size: 2.4rem
+  line-height: normal
+
+@font-face 
+  font-family: "Inter-lightItalic"
+  src: url("../fonts/Inter-LightItalic.ttf")
+  font-weight: 500
+  font-display: swap
+  font-style: normal
+  font-size: 2.4rem
+  line-height: normal
+
+@font-face 
+  font-family: "Inter-medium"
+  src: url("../fonts/Inter-Medium.ttf")
+  font-weight: 500
+  font-display: swap
+  font-style: normal
+  font-size: 2.4rem
+  line-height: normal
+
+@font-face 
+  font-family: "Inter-regular"
+  src: url("../fonts/Inter-Regular.ttf")
+  font-weight: 400
+  font-display: swap
+  font-style: normal
+  font-size: 2.4rem
+  line-height: normal
+
+.title
+    font-family: "Inter-regular"
+    font-weight: 400
+    font-size: 8rem
+    @include respond(tab-land)
+      font-size: 4.4rem
+    @include respond(phone)
+      font-size: 3.5rem
+    &-footer
+        font-size: 3.6rem
+        font-weight: 400
+        @include respond(tab-land)
+          font-size: 2.8rem
+        @include respond(phone)
+          font-size: 2.4rem
+
+.text
+    font-family: "Inter-light"
+    font-weight: 300
+    font-size: 1.8rem
+    @include respond(tab-land)
+      font-size: 1.6rem
